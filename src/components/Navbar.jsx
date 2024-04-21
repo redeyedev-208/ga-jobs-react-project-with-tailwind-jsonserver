@@ -15,7 +15,7 @@ const Navbar = () => {
               <img
                 className='h-10 w-auto'
                 src={logo}
-                alt='React Jobs'
+                alt='Jobs Project with react logo'
               />
               <span className='hidden md:block text-white text-2xl font-bold ml-2'>
                 React Jobs
