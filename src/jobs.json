@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "f91f",
+      "title": "IOS Dev",
+      "type": "Full-Time",
+      "location": "Earth",
+      "description": "I love tea",
+      "salary": "Over $200K",
+      "company": {
+        "name": "Test New Added Job 1",
+        "description": "Test Company to check that our logic is working correctly for creating a new job. ",
+        "contactEmail": "coffee@test.com",
+        "contactPhone": "12223333"
+      }
     }
   ]
 }

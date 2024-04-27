@@ -9,9 +9,11 @@ import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
 import JobPage, { jobLoader } from './pages/JobPage';
 import AddJobPage from './pages/AddJobPage';
+import EditJobPage from './pages/EditJobPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const App = () => {
+  // We can also put this api requests into a separate api service path if we want to follow convention
   const addJob = async (newJob) => {
     console.log(
       'This is a function that is passed as a prop from the child component to the parent page and then redirects to the jobs page',
@@ -34,6 +36,18 @@ const App = () => {
     return;
   };
 
+  // Update Job
+  const updateJob = async (job) => {
+    const res = await fetch(`/api/jobs/${job.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(job),
+    });
+    return;
+  };
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route
@@ -51,6 +65,11 @@ const App = () => {
         <Route
           path='/add-job'
           element={<AddJobPage addJobSubmit={addJob} />}
+        />
+        <Route
+          path='/edit-job/:id'
+          element={<EditJobPage updateJobSubmit={updateJob} />}
+          loader={jobLoader}
         />
         <Route
           path='/jobs/:id'
